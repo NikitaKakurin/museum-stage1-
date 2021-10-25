@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
     <title>museum</title>
 </head>
 <body>
@@ -16,27 +18,57 @@
             <h1 class="logo-text">Louvre</h1>
           </div>
           <nav class="header-nav">
-            <ul class="header-meny">
-              <li class="meny-item"><a href="#visiting">Visiting</a></li>
-              <li class="meny-item"><a href="#explore">Explore</a></li>
-              <li class="meny-item"><a href="#video">Video</a></li>
-              <li class="meny-item"><a href="#tickets">Tickets</a></li>
-              <li class="meny-item"><a href="">Contacts</a></li>
+            <ul class="header-menu">
+              <li class="menu-item"><a href="#visiting">Visiting</a></li>
+              <li class="menu-item"><a href="#explore">Explore</a></li>
+              <li class="menu-item"><a href="#video">Video</a></li>
+              <li class="menu-item"><a href="#gallery">Gallery</a></li>
+              <li class="menu-item"><a href="#tickets">Tickets</a></li>
+              <li class="menu-item"><a href="">Contacts</a></li>
             </ul>
           </nav>
         </div>
     </header>
     <main>
         <div class="container-welcome">
-          <section class="welcome"> 
-            <h2>Welcome <br> to the Louvre</h2>
-            <p>From the castle to the museum</p>
-            <div class="welcome-button">
-              <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736">Discover the louvre</a>
-            </div>
+          <section class="welcome" id="welcome">
+              <div class="welcome-header">
+                <h2>Welcome <br> to the Louvre</h2>
+                <p>From the castle to the museum</p>
+                <div class="welcome-button">
+                  <a href="https://www.google.com/maps/@48.8618159,2.3366818,3a,75y,81.55h,73.4t/data=!3m7!1e1!3m5!1sAF1QipOVxZQuSy3Bx9T_HpH_7FtBHDTXvI6SF-A10ocT!2e10!3e12!7i5472!8i2736">Discover the Louvre</a>
+                </div>
+              </div> 
+
+              <div class="slides-container">
+                <img class = "slide-welcome checked-slide" src="/assets/img/welcome (1).jpg" alt="Mona Lisa">
+                <img class = "slide-welcome" src="/assets/img/welcome (2).jpg" alt="pic2">
+                <img class = "slide-welcome" src="/assets/img/welcome (3).jpg" alt="pic3">
+                <img class = "slide-welcome" src="/assets/img/welcome (4).jpg" alt="pic4">
+                <img class = "slide-welcome" src="/assets/img/welcome (5).jpg" alt="pic5">
+                <div class="controls-container">
+                  <div class="slider-controls">
+                    <div class="slider-number">
+                      <span class="current-slide">01 |  05</span>
+                    </div>
+                    <ul>
+                      <li><div class="slide-pagination checked"></div></li>
+                      <li><div class="slide-pagination"></div></li>
+                      <li><div class="slide-pagination"></div></li>
+                      <li><div class="slide-pagination"></div></li>
+                      <li><div class="slide-pagination"></div></li>
+                    </ul>
+                    <div class="arrow">
+                      <button class="prev-slide"><img src="assets/svg/slide-prev.svg" alt="prev slide"></button>
+                      <button class="next-slide"><img src="assets/svg/slide-prev.svg" alt="prev slide"></button>
+                    </div>
+                  </div>
+                <div>
+              </div>
+
           </section>
         </div>
-        <div class="container"> 
+        <div class="container visit"> 
           <section class="visiting" id="visiting">
             <h2 class="visiting-title">Virtual Tour</h2>
             <div class="container-cards">
@@ -59,7 +91,7 @@
               <a href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120" class="card-item">
                 <div>
                   <img src="assets/img/rectangle-2.jpg" alt="Colonnade perrault">
-                  <h3>Collonade perrault</h3>
+                  <h3>Colonnade perrault</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
                 </div>
@@ -91,18 +123,27 @@
             </div>
           </section>
         </div>
+
         <div class="container-black">
           <div class="explore-container">
             <section class="explore" id="explore">
               <h2>Picture explore</h2>
-              <p>Las Meninas is a 1656 painting by Diego Vela&#x301;zguez, the leading<br>
+              <p>Las Meninas is a 1656 painting by Diego Velazguez, the leading<br>
                 artist of the Spanish Golden Age</p>
               <p>It was cleaned in 1984 to remove a <span>"yellow veil"</span> of dust that had<br>
                 gathered since the previous restoration in the 19th century.</p>
               <p>The cleaning provoked furious protests, not because the picture had<br>been damage in any way, but because it looked different.</p>
             </section>
             <div class="explore-image">
-              <img src="assets/img/explore-rectangle.jpg" alt="Las Meninas">
+              <div class="container-circle-explore">
+                <div class="circle-explore"></div>
+              </div>
+              <div class="compare-image right-slide-image">
+                <img src="assets/img/before.jpg" alt="Las Meninas" width="720px" >
+              </div>
+              <div class="compare-image ">
+                <img src="assets/img/after.jpg" alt="Las Meninas" width="720px">
+              </div>
             </div>
           </div>
         </div>
@@ -195,5 +236,6 @@
 
   </footer>
   <script src="js/index.js"></script>
+  <script src="js/compareSlider.js"></script>
 </body>
 </html>
