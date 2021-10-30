@@ -172,17 +172,23 @@ h2{
 .slides-container{
   margin-left: -155px ;
   position: relative;
+  width: 1000px;
+  height: 750px;
  
 }
 
 .slide-welcome{
-  display: none;
+  width: 0;
+  max-height: 750px;
+  display:none;
+  transition: .5s;
+  
 }  
 
 .checked-slide{
-
   display: block;
- 
+  width: 1000px;
+
 }
 .slides-container::after{
   position: absolute;
@@ -199,11 +205,12 @@ h2{
 .controls-container{
   position: relative;
   height: 60px;
+  z-index: 11;
 }
 .slider-controls{
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 22px;
   display: flex;
   justify-content:flex-start;
   align-items: center;
