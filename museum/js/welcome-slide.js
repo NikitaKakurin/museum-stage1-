@@ -34,17 +34,17 @@ function flipBack(){
     numberOfInitialSlide = numberOfPrevSlide
 }
 
-function flipForward(){
+function flipSlide(numberOfPortableSlide, beginPositionOfNextSlide, step){
     //if transition doesn't end return false
     if(transitionEnd==false){
         return false;
     }
     // if current slide is last, the next slide will be first
     let numberOfNextSlide;
-    if(numberOfInitialSlide >= slides.length -1){
-        numberOfNextSlide = 0;
+    if(slides[numberOfInitialSlide+step]===undefined){
+        numberOfNextSlide = numberOfPortableSlide;
     }else{
-        numberOfNextSlide = numberOfInitialSlide+1;
+        numberOfNextSlide = numberOfInitialSlide+step;
     }
 
     let currentSlide = slides[numberOfInitialSlide];
@@ -53,7 +53,7 @@ function flipForward(){
     // shift slide to the right
     // return transition back 
     nextSlide.classList.add("no-transition");
-    nextSlide.style.right = "-1000px";
+    nextSlide.style.right = `${-beginPositionOfNextSlide}px`;
     //!important it will update property transition
     nextSlide.offsetHeight;
     nextSlide.classList.remove("no-transition");
@@ -62,7 +62,7 @@ function flipForward(){
     currentSlide.classList.add("transition");
     nextSlide.classList.add("transition");
     // run slider    
-    currentSlide.style.right = "1000px";
+    currentSlide.style.right = `${beginPositionOfNextSlide}px`;
     nextSlide.style.right = "0px"
     transitionEnd = false;
         //handle transitionEnd
@@ -78,14 +78,20 @@ function flipForward(){
      })
 }
 
-
-
+function handleNextSlide(event){
+    flipSlide(numberOfPortableSlide = 0, 
+        beginPositionOfNextSlide = 1000, step = 1)
+}
+function handlePreviousSlide(event){
+    flipSlide(numberOfPortableSlide = slides.length-1, 
+        beginPositionOfNextSlide = -1000, step = -1)
+}
 
 //initial slide selection
 addClassChecked(numberOfInitialSlide);
 
-prevSlide.addEventListener("click", flipBack);
-nextSlide.addEventListener("click", flipForward);
+prevSlide.addEventListener("click", handlePreviousSlide);
+nextSlide.addEventListener("click", handleNextSlide);
 
 
 
