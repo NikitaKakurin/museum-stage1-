@@ -1,12 +1,17 @@
+let containerWelcome = document.querySelector(".container-welcome");
 let slidesContainer = document.querySelector(".slides-container");
 let slides = document.querySelectorAll(".slide-welcome");
 let pagination = document.querySelectorAll(".slide-pagination");
 let prevSlide = document.querySelector(".prev-slide");
 let nextSlide = document.querySelector(".next-slide");
 let numberOfSlide = document.querySelector(".current-slide")
+let touchScreen = document.querySelector(".touchScreen-slide")
 let transitionEnd = true;
 let numberOfInitialSlide = 0;
 slides[numberOfInitialSlide].style.right ="0px";
+let startSwipe;
+let finishSwipe;
+let swipeIsStart = false;
 
 //add class "checked" to slide and pagination
 function addClassChecked(numberOfSlide){
@@ -106,11 +111,46 @@ pagination.forEach((elem,index)=>{
     })
 })
 
-//let afterSlide = document.querySelector(".slides-container").dataset.shadowSlide;
-//afterSlide.addEventListener("click", (event)=>{
-//    console.log("tyfh")
-//    console.log(event.clientX);
-//})
+//handle swipe on slide
+touchScreen.addEventListener("mousedown", (event)=>{
+    startSwipe = event.clientX;
+    swipeIsStart=true;
+});
+
+containerWelcome.addEventListener("mouseup", (event)=>{
+    if(!swipeIsStart){
+        return false;
+    }
+    finishSwipe = event.clientX;
+    if(startSwipe>finishSwipe+20){
+        handleNextSlide();
+    };
+    if(startSwipe<finishSwipe-20){
+        handlePreviousSlide();
+    };
+    swipeIsStart = false;
+});
+
+//swipe done
+function IsVisible(elem){
+    let rect =elem.getBoundingClientRect();
+    let top = rect.top;
+    let bottom =rect.bottom;
+    return (top>=0) && (bottom<window.innerHeight);
+}
+
+document.addEventListener("keydown",function(event){
+    if(!IsVisible(touchScreen)){
+       return false;
+    }
+    event.preventDefault();
+    if(event.keyCode==37){
+        handlePreviousSlide();
+    };
+    if(event.keyCode==39){
+        handleNextSlide();
+    };
+});
 
 
 
