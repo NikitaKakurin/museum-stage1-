@@ -175,7 +175,8 @@ h2{
   overflow: hidden;
   width: 1000px;
   height: 810px;
- 
+  user-select: none;
+  touch-action: pan-y;
 }
 
 .slide-welcome{
@@ -183,8 +184,6 @@ h2{
   top: 0;
   z-index: 0;
   height: 750px;
-  
-  
 }  
 
 .checked-slide{
@@ -193,7 +192,7 @@ h2{
 
 
 .transition{
-  transition: all .5s;
+  transition: all .3s;
 }
 
 .no-transition{
@@ -266,10 +265,21 @@ list-style: none;
   width: 16px;
   height: 16px;
   background-color: #fff;
+  cursor: pointer;
+}
+.slide-pagination:hover{
+  border: 2px #D2B183 solid ;
 }
 .checked{
   background-color: #D2B183;
+  cursor: auto;
 }
+.checked:hover{
+  background-color: #D2B183;
+  cursor: auto;
+  border: none;
+}
+
 .arrow{
   display: flex;
   justify-content: space-between;
@@ -277,6 +287,16 @@ list-style: none;
   margin: 0;
   padding: 0;
 }
+
+.prev-slide img:hover{  
+  transform: scale(1.2);
+  filter: invert(10%) sepia(13%) saturate(1576%) hue-rotate(320deg) brightness(87%) contrast(86%);
+}
+.next-slide img:hover{  
+  transform: scale(1.2) rotate(180deg);
+  filter: invert(10%) sepia(13%) saturate(1576%) hue-rotate(320deg) brightness(87%) contrast(86%);
+}
+
 .next-slide,
 .prev-slide{
   background-color: #000;
@@ -448,6 +468,7 @@ padding-top: 38px;
   border: 5px white solid;
   border-radius: 100%;
   z-index: 9;
+  cursor: e-resize;
 }
 .circle-explore::after{
   position: absolute;

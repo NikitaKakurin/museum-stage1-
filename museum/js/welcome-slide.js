@@ -3,6 +3,7 @@ let slides = document.querySelectorAll(".slide-welcome");
 let pagination = document.querySelectorAll(".slide-pagination");
 let prevSlide = document.querySelector(".prev-slide");
 let nextSlide = document.querySelector(".next-slide");
+let numberOfSlide = document.querySelector(".current-slide")
 let transitionEnd = true;
 let numberOfInitialSlide = 0;
 slides[numberOfInitialSlide].style.right ="0px";
@@ -13,27 +14,12 @@ function addClassChecked(numberOfSlide){
     pagination[numberOfSlide].classList.add("checked");
 
 }
-
+//remove class "checked" to slide and pagination
 function removeClassChecked(numberOfSlide){
     slides[numberOfSlide].classList.remove("checked-slide");
     pagination[numberOfSlide].classList.remove("checked");
 }
-
-function flipBack(){
-    console.log("work back");
-    let numberOfPrevSlide;
-    if(numberOfInitialSlide <= 0){
-        numberOfPrevSlide = slides.length - 1; 
-    }else{
-        numberOfPrevSlide = numberOfInitialSlide-1;
-    }
-    slides[numberOfPrevSlide].style.display = "block";
-
-    slides[numberOfPrevSlide].style.width = "1000px";
-    slides[numberOfInitialSlide].style.width = 0;
-    numberOfInitialSlide = numberOfPrevSlide
-}
-
+//choose the portable slide
 function flipSlide(numberOfPortableSlide, beginPositionOfNextSlide, step){
     //if transition doesn't end return false
     if(transitionEnd==false){
@@ -46,9 +32,12 @@ function flipSlide(numberOfPortableSlide, beginPositionOfNextSlide, step){
     }else{
         numberOfNextSlide = numberOfInitialSlide+step;
     }
-
+    moveSlide(numberOfNextSlide,beginPositionOfNextSlide)
+}
+//flip slides
+function moveSlide(numNextSlide, beginPositionOfNextSlide){
     let currentSlide = slides[numberOfInitialSlide];
-    let nextSlide = slides[numberOfNextSlide];
+    let nextSlide = slides[numNextSlide];
     // remove transition from next slide 
     // shift slide to the right
     // return transition back 
@@ -71,28 +60,57 @@ function flipSlide(numberOfPortableSlide, beginPositionOfNextSlide, step){
       // remove checked-slide from current slide and current pagination
       //currentSlide.classList.remove("checked-slide");
       removeClassChecked(numberOfInitialSlide);
-      pagination[numberOfNextSlide].classList.add("checked");
+      pagination[numNextSlide].classList.add("checked");
+      numberOfSlide.innerHTML =`0${+numNextSlide+1} | 05`;
         //remove event transitionEnd
       currentSlide.removeEventListener("transitionend", transition)
-      numberOfInitialSlide = numberOfNextSlide;
+      numberOfInitialSlide = numNextSlide;
      })
 }
-
+// handler click on the Next slide
 function handleNextSlide(event){
-    flipSlide(numberOfPortableSlide = 0, 
-        beginPositionOfNextSlide = 1000, step = 1)
+    if(numberOfInitialSlide==0){
+        flipSlide(numberOfPortableSlide = 1, 
+            beginPositionOfNextSlide = 1000, step = 1)
+    }else{
+        flipSlide(numberOfPortableSlide = 0, 
+            beginPositionOfNextSlide = 1000, step = 1)
+    }
 }
+// handler click on the Previous slide
 function handlePreviousSlide(event){
-    flipSlide(numberOfPortableSlide = slides.length-1, 
-        beginPositionOfNextSlide = -1000, step = -1)
+    if(numberOfInitialSlide==slides.length-1){
+        flipSlide(numberOfPortableSlide = slides.length-2, 
+            beginPositionOfNextSlide = -1000, step = -1)
+    }else{
+        flipSlide(numberOfPortableSlide = slides.length-1, 
+            beginPositionOfNextSlide = -1000, step = -1)
+    }
 }
 
 //initial slide selection
 addClassChecked(numberOfInitialSlide);
-
+//handle click on the arrows
 prevSlide.addEventListener("click", handlePreviousSlide);
 nextSlide.addEventListener("click", handleNextSlide);
+//handle click on the pagination
+pagination.forEach((elem,index)=>{
+    elem.addEventListener("click", (event)=>{
+        let numberOfPagination = event.target.getAttribute('data-number');
+        if(numberOfPagination>numberOfInitialSlide){
+            moveSlide(numberOfPagination, 1000)
+        }
+        if(numberOfPagination<numberOfInitialSlide){
+            moveSlide(numberOfPagination, -1000)
+        }
+    })
+})
 
+//let afterSlide = document.querySelector(".slides-container").dataset.shadowSlide;
+//afterSlide.addEventListener("click", (event)=>{
+//    console.log("tyfh")
+//    console.log(event.clientX);
+//})
 
 
 
