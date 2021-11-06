@@ -362,12 +362,26 @@ padding-top: 38px;
 .card-item h3::after{
   content: "";
   position: absolute;
-  bottom: -11px;
+  bottom: -10px;
   left: 0;
   width: 300px;
   height: 2px;
   background-color: #710707;
+  transition: all 0.5s;
 }
+
+.card-item:hover h3::after{
+  width: 440px;
+  height: 3px;
+}
+.card-item:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+  outline: 1px solid  #9D8665;
+  border-radius: 5px;
+}
+
+
 
 .card-virtual-text{
   font-family: Roboto;
@@ -389,7 +403,7 @@ padding-top: 38px;
   letter-spacing: 0em;
   text-align: left;
 }
-
+/*------------SECTION EXPLORER BELOW----------*/
 .container-black{
   box-sizing: border-box;
   max-width: 1920px;
@@ -506,12 +520,15 @@ padding-top: 38px;
   z-index: 5;
 }
 
+/*------------SECTION EXPLORER ABOVE----------*/
+
+/*------------SECTION Video BELOW----------*/
+
 .container-player{
   width: 1440px;
   height: 714px;
   margin-top: 90px;
   background-color: #000000;
-  background-image: url("../assets/img/video-rectangle.jpg");
   background-repeat: no-repeat;
 
 }
@@ -617,7 +634,7 @@ padding-top: 38px;
 
 .video h2{
   color: #9D8665;
-  margin-top: 40px;
+  margin-top: 82px;
 }
 
 .video p{
@@ -632,6 +649,10 @@ padding-top: 38px;
   letter-spacing: 0em;
   text-align: left;
 }
+
+/*------------SECTION Video ABOVE----------*/
+
+/*------------SECTION tickets BELOW----------*/
 
 .container-tickets{
   width: 1920px;
@@ -858,3 +879,5 @@ padding-top: 38px;
 }
 
 /*---------Cтилизация ticket-amount------------*/
+
+/*------------SECTION tickets ABOVE----------*/
