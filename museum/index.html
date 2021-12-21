@@ -74,7 +74,9 @@
             <div class="container-cards">
               <a href="https://www.google.com/maps/@48.8606882,2.3356791,3a,90y,328.36h,87.55t/data=!3m7!1e1!3m5!1sAF1QipMZ9YgnArbwEIbTDANeSQYFu9gNqpW_2Sv8FBvY!2e10!3e12!7i4352!8i1815" class="card-item">
                 <div>
-                  <img src="assets/img/rectangle.jpg" alt="Royal palace">
+                  <div class="card-image-wrapper">
+                    <img src="assets/img/rectangle.jpg" alt="Royal palace">
+                  </div>
                   <h3>Royal palace</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
@@ -82,7 +84,9 @@
               </a>
               <a href="https://www.google.com/maps/@48.8563254,2.3352706,3a,75y,90t/data=!3m7!1e1!3m5!1sAF1QipNRj_CwP4coDMYdCHj6qHeBeJpI2VxU5BUsOX4F!2e10!3e12!7i11000!8i5500" class="card-item">
                 <div>
-                  <img src="assets/img/rectangle-1.jpg" alt="Denon wing">
+                  <div class="card-image-wrapper">
+                    <img src="assets/img/rectangle-1.jpg" alt="Denon wing">
+                  </div>
                   <h3>Denon wing</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
@@ -90,7 +94,9 @@
               </a>
               <a href="https://www.google.com/maps/@48.8601723,2.3395439,3a,88.4y,322.04h,84.25t/data=!3m7!1e1!3m5!1sAF1QipNMZGQuEA-pAUvIG_eP_2f3gWTKZEJ6XLVJ-Pgb!2e10!3e12!7i10240!8i5120" class="card-item">
                 <div>
-                  <img src="assets/img/rectangle-2.jpg" alt="Colonnade perrault">
+                  <div class="card-image-wrapper">
+                    <img src="assets/img/rectangle-2.jpg" alt="Colonnade perrault">
+                  </div>
                   <h3>Colonnade perrault</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
@@ -98,15 +104,19 @@
               </a>
               <a href="https://www.google.com/maps/@48.860183,2.3356156,3a,90y,177.69h,95.61t/data=!3m7!1e1!3m5!1sAF1QipP7uFZnTITRe-7AEVAgHAfqiCL-03gvBHcYWgF3!2e10!3e12!7i5472!8i2736" class="card-item">
                 <div>
-                  <img src="assets/img/rectangle-3.jpg" alt="Greek hall">
-                  <h3>Greek hall</h3>
+                  <div class="card-image-wrapper">
+                    <img src="assets/img/rectangle-3.jpg" alt="Greek hall">
+                  </div>
+                    <h3>Greek hall</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
                 </div>
               </a>
               <a href="https://www.google.com/maps/@48.8598788,2.3355157,3a,82.2y,7.53h,94t/data=!3m7!1e1!3m5!1sAF1QipO1wkUUbyzpPjj-OR0mR5etZJT-xl-40XK8rDQ3!2e10!3e12!7i10240!8i5120" class="card-item">
                 <div>
-                  <img src="assets/img/rectangle-4.jpg" alt="Mona Lisa">
+                  <div class="card-image-wrapper">
+                    <img src="assets/img/rectangle-4.jpg" alt="Mona Lisa">
+                  </div>
                   <h3>Mona Lisa</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
@@ -114,7 +124,9 @@
               </a>
               <a href="https://www.google.com/maps/@48.8563254,2.3352706,3a,90y,21.26h,79.91t/data=!3m7!1e1!3m5!1sAF1QipPpGAowYatVyk3MMGnZAaQkYm2EUk-Dlca06SS5!2e10!3e12!7i11304!8i5652" class="card-item">
                 <div>
-                  <img src="assets/img/rectangle-5.jpg" alt="Night palace">
+                  <div class="card-image-wrapper">
+                    <img src="assets/img/rectangle-5.jpg" alt="Night palace">
+                  </div>
                   <h3>Night palace</h3>
                   <p class="card-virtual-text">360&deg; Virtual Tour</p>
                   <p class="card-google-text">Google Street Panorama View</p>
@@ -147,32 +159,100 @@
             </div>
           </div>
         </div>
-        <div class="container">
+        <div class="container container-video">
           <section class="video" id="video">
             <h2>Video journey</h2>
             <p>Enter and visit one of the most famous museums in the world and enjoy<br>
             masterpieces such as Mona Lisa or Hammurabi's Code</p>
             <div class="container-player">
-              <div class="main-play-container">
-                <button class="main-play"><span><img src="assets/svg/main-play.png" alt="main-play"></span></button>
-              </div> 
-              <div class="player-manage-tools">
-                <button class="button-run">
-                  <img src="assets/svg/vector-run.png" alt="run">
-                </button>
-                <input  type="range" min="0" max="100" step="1" class="progress">
-                <button class="button-sound">
-                  <img src="assets/svg/sound.png" alt="sound-icon">
-                </button>
-                <input  type="range" min="0" max="100" step="1" class="volume">
-                <button class="button-fullscreen">
-                  <img class="sound" src="assets/svg/fullscreen.png" alt="sound-icon">
-                </button>
+              <div class="video-player">
+                <video muted="muted" poster="assets/img/video-rectangle.jpg" class="mainVideo">
+                  <source src="assets/video/video0.mp4" type="video/mp4">
+                  Your browser doesn't support HTML5 video tag.
+                </video>
+                <div class="main-play-container">
+                  <button class="main-play"><span><img src="assets/svg/main-play.png" alt="main-play"></span></button>
+                </div> 
+                <div class="player-manage-tools">
+                  <button class="button-run-pause">
+                    <img src="assets/svg/vector-run.png" alt="run">
+                  </button>
+                  <input  type="range" min="0" max="100" value ="0"  step="1" class="progress">
+                  <button class="button-sound">
+                    <img src="assets/svg/sound.png" alt="sound-icon">
+                  </button>
+                  <input  type="range" min="0" max="100" step="1" class="volume">
+                  <button class="button-fullscreen">
+                    <span class="fullscreen-icon"></span>
+                  </button>
+                </div>
               </div>
             </div>
-
+            <div class="container-video-slider">
+              <div class="video-slide">
+                <iframe width="452" height="254" 
+                  src="https://www.youtube.com/embed/zp1BXPX8jcU?controls=0" 
+                  title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; 
+                  encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-slide">
+                <iframe width="452" height="254" 
+                  src="https://www.youtube.com/embed/Vi5D6FKhRmo?controls=0" 
+                  title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                  gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-slide">
+                <iframe width="452" height="254" 
+                  src="https://www.youtube.com/embed/NOhDysLnTvY?controls=0" 
+                  title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                  gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-slide">
+                <iframe width="452" height="254" 
+                  src="https://www.youtube.com/embed/aWmJ5DgyWPI?controls=0" 
+                  title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                  gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="video-slide">                  
+                <iframe width="452" height="254"  
+                  src="https://www.youtube.com/embed/2OR0OCr6uRE?controls=0" 
+                  title="YouTube video player" frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                  gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+            <div class="container-pagination-video">
+              <div class="prev-pagination-video">
+                <img src="assets/svg/Vector (StrokeBack).svg"></span>
+              </div>
+              <div class="pagination-video .pagination-video-checked"></div>
+              <div class="pagination-video"></div>
+              <div class="pagination-video"></div>
+              <div class="pagination-video"></div>
+              <div class="pagination-video"></div>
+              <div class="next-pagination-video">
+                <span>
+                  <img src="assets/svg/Vector (StrokeNext).svg">
+                </span>
+              </div>
+            </div>
           </section>
         </div>
+
         <div class="container-black container-tickets">
           <section class="container tickets" id="tickets">
             <h2>Buy Tickets</h2>
@@ -233,6 +313,7 @@
   <script src="js/index.js"></script>
   <script src="js/welcome-slide.js"></script>
   <script src="js/compareSlider.js"></script>
+  <script src="js/video-slide.js"></script>
 
 </body>
 </html>

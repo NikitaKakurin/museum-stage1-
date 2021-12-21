@@ -1,7 +1,7 @@
 let containerWelcome = document.querySelector(".container-welcome");
 let slidesContainer = document.querySelector(".slides-container");
 let slides = document.querySelectorAll(".slide-welcome");
-let pagination = document.querySelectorAll(".slide-pagination");
+let paginationWelcomeSlide = document.querySelectorAll(".slide-pagination");
 let prevSlide = document.querySelector(".prev-slide");
 let nextSlide = document.querySelector(".next-slide");
 let numberOfSlide = document.querySelector(".current-slide")
@@ -16,13 +16,13 @@ let swipeIsStart = false;
 //add class "checked" to slide and pagination
 function addClassChecked(numberOfSlide){
     slides[numberOfSlide].classList.add("checked-slide");
-    pagination[numberOfSlide].classList.add("checked");
+    paginationWelcomeSlide[numberOfSlide].classList.add("checked");
 
 }
 //remove class "checked" to slide and pagination
 function removeClassChecked(numberOfSlide){
     slides[numberOfSlide].classList.remove("checked-slide");
-    pagination[numberOfSlide].classList.remove("checked");
+    paginationWelcomeSlide[numberOfSlide].classList.remove("checked");
 }
 //choose the portable slide
 function flipSlide(numberOfPortableSlide, beginPositionOfNextSlide, step){
@@ -62,10 +62,10 @@ function moveSlide(numNextSlide, beginPositionOfNextSlide){
         //handle transitionEnd
     currentSlide.addEventListener("transitionend",function transition(){
       transitionEnd = true;
-      // remove checked-slide from current slide and current pagination
+      // remove checked-slide from current slide and current paginationWelcomeSlide
       //currentSlide.classList.remove("checked-slide");
       removeClassChecked(numberOfInitialSlide);
-      pagination[numNextSlide].classList.add("checked");
+      paginationWelcomeSlide[numNextSlide].classList.add("checked");
       numberOfSlide.innerHTML =`0${+numNextSlide+1} | 05`;
         //remove event transitionEnd
       currentSlide.removeEventListener("transitionend", transition)
@@ -98,8 +98,8 @@ addClassChecked(numberOfInitialSlide);
 //handle click on the arrows
 prevSlide.addEventListener("click", handlePreviousSlide);
 nextSlide.addEventListener("click", handleNextSlide);
-//handle click on the pagination
-pagination.forEach((elem,index)=>{
+//handle click on the paginationWelcomeSlide
+paginationWelcomeSlide.forEach((elem,index)=>{
     elem.addEventListener("click", (event)=>{
         let numberOfPagination = event.target.getAttribute('data-number');
         if(numberOfPagination>numberOfInitialSlide){
