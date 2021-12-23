@@ -587,7 +587,7 @@ padding-top: 38px;
   padding: 0;
 }
 
-.main-play span{
+.main-play > span{
   display: flex;
   align-items: center;
   width: 200px;
@@ -596,9 +596,9 @@ padding-top: 38px;
   border: #FFFFFF 10px solid;
 }
 
-.main-play span img{
+/* .main-play span img{
   margin-left: 67px;
-}
+} */
 
 .player-manage-tools{
   display: flex;
@@ -606,6 +606,39 @@ padding-top: 38px;
   align-items: center;
   width: 1440px;
   height: 85px;
+}
+.main-button-run,
+.button-run{
+  box-sizing: border-box;
+  display: block;
+  width:0;
+  height: 0;
+}
+
+.button-run{
+  border-left:23px#B3B3B3 solid;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+.main-button-run{
+  margin-left: 67px;
+  border-left:90px#FFFFFF solid;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+}
+.main-play span:hover,
+.button-run:hover{
+  cursor:pointer
+}
+
+.button-pause{
+  height: 30px;
+  width: 21px;
+  border-left:8px#B3B3B3 solid;
+  border-right: 8px#B3B3B3 solid;
+  border-top: none;
+  border-bottom: none;
+  margin-right: 3px;
 }
 
 .progress{

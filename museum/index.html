@@ -42,11 +42,11 @@
               <div class="slides-container">
                 <div class="shadowOnSlide"></div>
                 <div class="touchScreen-slide"></div>
-                <img class = "slide-welcome" src="assets/img/welcome (1).jpg" alt="Mona Lisa">
-                <img class = "slide-welcome" src="assets/img/welcome (2).jpg" alt="pic2">
-                <img class = "slide-welcome" src="assets/img/welcome (3).jpg" alt="pic3">
-                <img class = "slide-welcome" src="assets/img/welcome (4).jpg" alt="pic4">
-                <img class = "slide-welcome" src="assets/img/welcome (5).jpg" alt="pic5">
+                <img class = "slide-welcome" src="assets/img/welcome(1).jpg" alt="Mona Lisa">
+                <img class = "slide-welcome" src="assets/img/welcome(2).jpg" alt="pic2">
+                <img class = "slide-welcome" src="assets/img/welcome(3).jpg" alt="pic3">
+                <img class = "slide-welcome" src="assets/img/welcome(4).jpg" alt="pic4">
+                <img class = "slide-welcome" src="assets/img/welcome(5).jpg" alt="pic5">
                 <div class="controls-container">
                   <div class="slider-controls">
                     <div class="slider-number">
@@ -65,6 +65,8 @@
                     </div>
                   </div>
                 <div>
+              </div>
+              </div>
               </div>
           </section>
         </div>
@@ -151,10 +153,10 @@
                 <div class="circle-explore"></div>
               </div>
               <div class="compare-image right-slide-image">
-                <img src="assets/img/before.jpg" alt="Las Meninas" width="720px" >
+                <img src="assets/img/before.jpg" alt="Las Meninas" width="720" >
               </div>
               <div class="compare-image ">
-                <img src="assets/img/after.jpg" alt="Las Meninas" width="720px">
+                <img src="assets/img/after.jpg" alt="Las Meninas" width="720">
               </div>
             </div>
           </div>
@@ -166,22 +168,26 @@
             masterpieces such as Mona Lisa or Hammurabi's Code</p>
             <div class="container-player">
               <div class="video-player">
-                <video muted="muted" poster="assets/img/video-rectangle.jpg" class="mainVideo">
+                <video poster="assets/img/video-rectangle.jpg" class="mainVideo">
                   <source src="assets/video/video0.mp4" type="video/mp4">
                   Your browser doesn't support HTML5 video tag.
                 </video>
                 <div class="main-play-container">
-                  <button class="main-play"><span><img src="assets/svg/main-play.png" alt="main-play"></span></button>
+                  <button class="main-play">
+                    <span>
+                      <span class="main-button-run"></span>
+                    </span>
+                  </button>
                 </div> 
                 <div class="player-manage-tools">
                   <button class="button-run-pause">
-                    <img src="assets/svg/vector-run.png" alt="run">
+                    <span class ="button-run"></span>
                   </button>
                   <input  type="range" min="0" max="100" value ="0"  step="1" class="progress">
                   <button class="button-sound">
                     <img src="assets/svg/sound.png" alt="sound-icon">
                   </button>
-                  <input  type="range" min="0" max="100" step="1" class="volume">
+                  <input  type="range" min="0" max="100" step="1" class="volume" name="volume">
                   <button class="button-fullscreen">
                     <span class="fullscreen-icon"></span>
                   </button>
@@ -237,7 +243,7 @@
             </div>
             <div class="container-pagination-video">
               <div class="prev-pagination-video">
-                <img src="assets/svg/Vector (StrokeBack).svg"></span>
+                <img src="assets/svg/Vector(StrokeBack).svg" alt = "back">
               </div>
               <div class="pagination-video .pagination-video-checked"></div>
               <div class="pagination-video"></div>
@@ -246,7 +252,7 @@
               <div class="pagination-video"></div>
               <div class="next-pagination-video">
                 <span>
-                  <img src="assets/svg/Vector (StrokeNext).svg">
+                  <img src="assets/svg/Vector(StrokeNext).svg" alt = "next">
                 </span>
               </div>
             </div>
