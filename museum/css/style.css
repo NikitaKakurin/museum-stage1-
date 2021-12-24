@@ -42,6 +42,10 @@ h2{
   text-transform: uppercase;
 }
 
+iframe{
+  border-width: 0;
+}
+
 .container{
   max-width: 1440px;
   margin: 0 auto;
@@ -595,10 +599,6 @@ padding-top: 38px;
   border-radius: 50%;
   border: #FFFFFF 10px solid;
 }
-
-/* .main-play span img{
-  margin-left: 67px;
-} */
 
 .player-manage-tools{
   display: flex;
