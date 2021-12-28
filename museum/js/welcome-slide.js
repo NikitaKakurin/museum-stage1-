@@ -1,3 +1,4 @@
+"use strict"
 let containerWelcome = document.querySelector(".container-welcome");
 let slidesContainer = document.querySelector(".slides-container");
 let slides = document.querySelectorAll(".slide-welcome");
@@ -75,21 +76,17 @@ function moveSlide(numNextSlide, beginPositionOfNextSlide){
 // handler click on the Next slide
 function handleNextSlide(event){
     if(numberOfInitialSlide==0){
-        flipSlide(numberOfPortableSlide = 1, 
-            beginPositionOfNextSlide = 1000, step = 1)
+        flipSlide( 1, 1000, 1);
     }else{
-        flipSlide(numberOfPortableSlide = 0, 
-            beginPositionOfNextSlide = 1000, step = 1)
+        flipSlide(0, 1000, 1);
     }
 }
 // handler click on the Previous slide
 function handlePreviousSlide(event){
     if(numberOfInitialSlide==slides.length-1){
-        flipSlide(numberOfPortableSlide = slides.length-2, 
-            beginPositionOfNextSlide = -1000, step = -1)
+        flipSlide(slides.length-2, -1000, -1)
     }else{
-        flipSlide(numberOfPortableSlide = slides.length-1, 
-            beginPositionOfNextSlide = -1000, step = -1)
+        flipSlide(slides.length-1, -1000, -1)
     }
 }
 

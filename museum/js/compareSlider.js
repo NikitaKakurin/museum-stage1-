@@ -1,3 +1,4 @@
+"use strict"
 let leftSlideImage = document.querySelector('.right-slide-image');
 let circleSlider = document.querySelector('.circle-explore');
 let clicked = false;

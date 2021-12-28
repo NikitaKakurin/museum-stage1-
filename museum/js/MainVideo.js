@@ -1,3 +1,4 @@
+"use strict"
 const progressVideo = document.querySelector('.progress');
 const volume = document.querySelector('.volume');
 const pagination = document.querySelectorAll(".pagination-video");
